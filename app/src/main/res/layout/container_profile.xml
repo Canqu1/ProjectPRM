@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="914dp"
+    android:background="@drawable/drawable_shape">
+
+    <ImageView
+        android:id="@+id/container_name_edit_text"
+        android:layout_width="387dp"
+        android:layout_height="54dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="385dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_name_edit_text"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/text_nguyen_minh_tuan"
+        android:layout_width="137dp"
+        android:layout_height="19dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="402dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Nguyễn Minh Tuấn"
+        android:textColor="#FF000000"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:id="@+id/container_customer"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="399dp"
+        android:layout_gravity="top|left"
+        android:scaleType="centerInside"
+        android:src="@drawable/container_customer" />
+
+    <ImageView
+        android:id="@+id/container_email_edit_text"
+        android:layout_width="387dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="459dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_email_edit_text"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/text_email"
+        android:layout_width="266dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="93dp"
+        android:layout_marginTop="476dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="nguyenminhtuan271203@gmail.com"
+        android:textColor="#FF000000"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:id="@+id/container_email"
+        android:layout_width="26dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="473dp"
+        android:layout_gravity="top|left"
+        android:scaleType="centerInside"
+        android:src="@drawable/container_email" />
+
+    <TextView
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="19.5dp"
+        android:layout_marginBottom="-0.5dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Profile"
+        android:textColor="#FFFFFFFF"
+        android:textSize="24dp" />
+
+    <ImageView
+        android:id="@+id/container_create"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="362dp"
+        android:layout_marginTop="9dp"
+        android:layout_gravity="top|left"
+        android:scaleType="centerInside"
+        android:src="@drawable/container_create" />
+
+    <ImageView
+        android:id="@+id/container_logout_button"
+        android:layout_width="387dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="673dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_logout_button"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/text_register"
+        android:layout_width="73dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="689dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="LOGOUT"
+        android:textColor="#FFFFFFFF"
+        android:textSize="13dp" />
+
+    <ImageView
+        android:id="@+id/container_arrow_pointing_left"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="top|left"
+        android:scaleType="centerInside"
+        android:src="@drawable/container_arrow_pointing_left" />
+
+    <ImageView
+        android:id="@+id/container_history_button"
+        android:layout_width="387dp"
+        android:layout_height="53dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="591dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_history_button"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/text_history"
+        android:layout_width="157dp"
+        android:layout_height="22dp"
+        android:layout_marginLeft="131dp"
+        android:layout_marginTop="608dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="BOOKING HISTORY"
+        android:textColor="#FF000000"
+        android:textSize="13dp" />
+
+    <ImageView
+        android:id="@+id/container_ellipse"
+        android:layout_width="155dp"
+        android:layout_height="156dp"
+        android:layout_marginLeft="131dp"
+        android:layout_marginTop="99dp"
+        android:layout_gravity="top|left"
+        android:background="@drawable/container_ellipse"
+        android:scaleType="centerInside" />
+
+    <TextView
+        android:id="@+id/text_edit_image"
+        android:layout_width="80dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="159dp"
+        android:layout_marginTop="274dp"
+        android:layout_gravity="top|left"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Edit image"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12dp" />
+
+    <ImageView
+        android:id="@+id/container_camera"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginLeft="241dp"
+        android:layout_marginTop="272dp"
+        android:layout_gravity="top|left"
+        android:scaleType="centerInside"
+        android:src="@drawable/container_camera" />
+</FrameLayout>
