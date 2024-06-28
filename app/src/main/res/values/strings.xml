@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">ProjectPRM</string>
+    <string name="login">Login</string>
+    <string name="book_now">Book now</string>
 </resources>
