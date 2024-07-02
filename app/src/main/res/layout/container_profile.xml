@@ -132,13 +132,13 @@
             app:layout_constraintTop_toBottomOf="@id/edt_name" />
 
         <Button
-            android:id="@+id/btn_history"
+            android:id="@+id/btn_upd"
             android:layout_width="387dp"
             android:layout_height="54dp"
             android:layout_marginTop="200dp"
             android:background="@drawable/drawable_shape_1"
             android:scaleType="centerInside"
-            android:text="Booking History"
+            android:text="Update"
             android:textColor="#000000"
 
             app:layout_constraintLeft_toLeftOf="@id/layout_bot"
@@ -157,7 +157,7 @@
             android:textColor="#000000"
             app:layout_constraintLeft_toLeftOf="@id/layout_bot"
             app:layout_constraintRight_toRightOf="@id/layout_bot"
-            app:layout_constraintTop_toBottomOf="@id/btn_history"
+            app:layout_constraintTop_toBottomOf="@id/btn_upd"
             app:strokeColor="#000000" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
