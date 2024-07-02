@@ -2,6 +2,8 @@ package com.example.myapplication.adapter;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.Context;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -17,17 +20,18 @@ import com.example.myapplication.DetailActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.model.Room;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
     ArrayList<Room> rooms;
+
     public RoomAdapter(ArrayList<Room> room) {
         this.rooms =room;
     }
 
     @NonNull
     @Override
-
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_room, parent, false);
         return new ViewHolder(inflate);
@@ -39,7 +43,6 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
         int drawableID = holder.itemView.getContext().getResources().getIdentifier(
                 rooms.get(position).getImg(),
                 "drawable",
-
                 holder.itemView.getContext().getPackageName()
         );
 
@@ -56,9 +59,6 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
             }
         });
     }
-
-
-
     @Override
     public int getItemCount() {
         return rooms.size();

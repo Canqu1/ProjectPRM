@@ -4,18 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/room_layout"
-    android:layout_height="match_parent">
+    android:layout_height="411dp">
 
     <ImageView
         android:id="@+id/img_room"
-        android:layout_width="412dp"
-        android:layout_height="196dp"
+        android:layout_width="437dp"
+        android:layout_height="411dp"
         android:layout_marginTop="1dp"
         android:layout_marginBottom="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0"
+        app:layout_constraintVertical_bias="0.207"
         app:srcCompat="@drawable/room1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

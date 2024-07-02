@@ -11,14 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.adapter.RoomAdapter;
-import com.example.myapplication.model.Category;
 import com.example.myapplication.model.Room;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    private RecyclerView.Adapter adapter;
     private RecyclerView.Adapter adapter2;
-    private RecyclerView recyclerViewCategoryList;
     private RecyclerView recylcleViewRoom;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
