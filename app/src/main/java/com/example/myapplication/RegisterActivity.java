@@ -19,20 +19,20 @@ import com.example.myapplication.Entities.Customer;
 import com.example.myapplication.Entities.User;
 
 public class RegisterActivity extends AppCompatActivity {
-    Button b1;
-    TextView tx1;
+
+    TextView tx1,b1;
 
     EditText ed1 , ed2 , ed3 , ed4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.container_register);
-        b1 = (Button)findViewById(R.id.btn_register);
-        ed1 = (EditText)findViewById(R.id.text_uname);
-        ed2 = (EditText)findViewById(R.id.text_pwd);
-        ed3 = (EditText)findViewById(R.id.text_email);
-        ed4= (EditText)findViewById(R.id.text_fname);
-        tx1 = (TextView)findViewById(R.id.text_success);
+        b1 = findViewById(R.id.btn_register);
+        ed1 = findViewById(R.id.text_uname);
+        ed2 = findViewById(R.id.text_pwd);
+        ed3 = findViewById(R.id.text_email);
+        ed4= findViewById(R.id.text_fname);
+        tx1 = findViewById(R.id.text_success);
         tx1.setVisibility(View.GONE);
 
         FRoomDatabase db = Room.databaseBuilder(getApplicationContext(),

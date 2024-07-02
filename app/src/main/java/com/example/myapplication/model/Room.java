@@ -34,6 +34,7 @@ public class Room implements Serializable {
         this.img = img;
     }
 
+
     public String getDescription() {
         return description;
     }

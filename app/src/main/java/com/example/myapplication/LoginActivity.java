@@ -18,7 +18,7 @@ import com.example.myapplication.Entities.User;
 
 public class LoginActivity extends AppCompatActivity{
     ImageButton b1;
-    TextView tx1;
+    TextView tx1,txt_register;
     EditText ed1 , ed2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +28,21 @@ public class LoginActivity extends AppCompatActivity{
         ed1 = (EditText)findViewById(R.id.text_uname);
         ed2 = (EditText)findViewById(R.id.text_pwd);
         tx1 = (TextView)findViewById(R.id.text_please_sign_in);
+        txt_register = findViewById(R.id.text_sign_up);
         //tx1.setVisibility(View.GONE);
 
         FRoomDatabase db = Room.databaseBuilder(getApplicationContext(),
                 FRoomDatabase.class, "FRoomDB1").allowMainThreadQueries().build();
         UserDAO userDao = db.userDao();
 
-
+        txt_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User u = userDao.findByName(ed1.getText().toString());
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(i);
+            }
+        });
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 User u = userDao.findByName(ed1.getText().toString());
@@ -48,7 +56,7 @@ public class LoginActivity extends AppCompatActivity{
                 }else{
                     tx1.setBackgroundColor(Color.RED);
                     tx1.setText("Logged in");
-                    Intent i = new Intent(LoginActivity.this, ProfileActivity.class);
+                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
                     i.putExtra("uid",u.uid);
                     startActivity(i);
                 }

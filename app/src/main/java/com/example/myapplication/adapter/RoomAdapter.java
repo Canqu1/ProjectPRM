@@ -39,6 +39,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
         int drawableID = holder.itemView.getContext().getResources().getIdentifier(
                 rooms.get(position).getImg(),
                 "drawable",
+
                 holder.itemView.getContext().getPackageName()
         );
 
