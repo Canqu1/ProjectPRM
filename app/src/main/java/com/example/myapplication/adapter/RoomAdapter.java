@@ -21,7 +21,6 @@ import java.util.ArrayList;
 
 public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
     ArrayList<Room> rooms;
-
     public RoomAdapter(ArrayList<Room> room) {
         this.rooms =room;
     }

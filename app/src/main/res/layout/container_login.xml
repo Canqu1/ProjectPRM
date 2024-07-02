@@ -48,21 +48,19 @@
             android:background="@drawable/image_password_edit_text"
             android:scaleType="centerCrop" />
 
-        <TextView
-            android:id="@+id/text_password"
-            android:layout_width="73dp"
-            android:layout_height="19dp"
-            android:layout_marginLeft="79dp"
-            android:layout_marginTop="403dp"
-            android:layout_marginBottom="163dp"
+        <EditText
+            android:id="@+id/text_pwd"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="left"
+            android:layout_marginLeft="79dp"
+            android:layout_marginTop="390dp"
+            android:layout_marginBottom="130dp"
             android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="Password"
             android:textColor="#FF010101"
-            android:textSize="12dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/text_login_button"
@@ -80,21 +78,19 @@
             android:textColor="#FF010101"
             android:textSize="13dp" />
 
-        <TextView
-            android:id="@+id/text_email_address"
-            android:layout_width="105dp"
-            android:layout_height="19dp"
-            android:layout_marginLeft="79dp"
-            android:layout_marginTop="330dp"
-            android:layout_marginBottom="236dp"
+        <EditText
+            android:id="@+id/text_uname"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="left"
+            android:layout_marginLeft="79dp"
+            android:layout_marginTop="320dp"
+            android:layout_marginBottom="200dp"
             android:gravity="left|center_vertical"
-            android:includeFontPadding="false"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="Email Address"
             android:textColor="#FF010101"
-            android:textSize="12dp" />
+            android:textSize="20dp" />
 
         <TextView
             android:id="@+id/text_or"

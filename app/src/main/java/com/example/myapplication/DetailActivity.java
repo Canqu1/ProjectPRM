@@ -12,7 +12,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
-import com.example.pm.model.Room;
+//import com.example.pm.model.Room;
+import com.example.myapplication.model.Room;
 
 public class DetailActivity extends AppCompatActivity {
 private TextView bookbtn;
@@ -23,7 +24,7 @@ private Room object;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_detail);
+        //setContentView(R.layout.activity_detail);
         innitView();
         getBundle();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
