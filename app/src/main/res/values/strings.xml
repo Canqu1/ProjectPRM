@@ -2,4 +2,6 @@
     <string name="app_name">ProjectPRM</string>
     <string name="login">Login</string>
     <string name="book_now">Book now</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

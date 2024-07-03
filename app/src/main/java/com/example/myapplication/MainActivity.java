@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,12 +13,29 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.adapter.RoomAdapter;
+import com.example.myapplication.fragment.BookFragment;
+import com.example.myapplication.fragment.HomeFragment;
+import com.example.myapplication.fragment.ProfileFragment;
+import com.example.myapplication.fragment.RecommentFragment;
+import com.example.myapplication.fragment.SaleFragment;
 import com.example.myapplication.model.Room;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    BottomNavigationView bottomNavigationView;
+    HomeFragment homeFragment = new HomeFragment();
+    RecommentFragment recommentFragment = new RecommentFragment();
+    BookFragment bookFragment = new BookFragment();
+    SaleFragment saleFragment = new SaleFragment();
+    ProfileFragment profileFragment = new ProfileFragment();
     private RecyclerView.Adapter adapter2;
     private RecyclerView recylcleViewRoom;
+    public void findViewById() {
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,20 +46,61 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        recyleViewRoom();
+        findViewById();
+        others();
+        setOnClickListener();
     }
-    private void recyleViewRoom(){
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
-        recylcleViewRoom = findViewById(R.id.rcl_view);
-        recylcleViewRoom.setLayoutManager(linearLayoutManager);
-        ArrayList<Room> room = new ArrayList<>();
-        room.add(new Room("r1","room1","dsads",0));
-        room.add(new Room("r2","room2","dsads",0));
-        room.add(new Room("r3","room3","dsads",0));
-        room.add(new Room("r4","room4","dsads",0));
-        room.add(new Room("r5","room5","dsads",0));
-        adapter2 = new RoomAdapter(room);
-        recylcleViewRoom.setAdapter(adapter2);
 
+    private void setOnClickListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                if(item.getItemId() == R.id.nav_home){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, homeFragment).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_recom){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, recommentFragment).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_book){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, bookFragment).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_sale){
+                    getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, saleFragment).commit();
+                    return true;
+                } else if (item.getItemId() == R.id.nav_user){
+                     getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, profileFragment).commit();
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        });
     }
+
+    private void others() {
+        Intent intent = getIntent();
+        int fragment = intent.getIntExtra("fragment", 0);
+        if(fragment == 1){
+            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, homeFragment).commit();
+            bottomNavigationView.getMenu().getItem(0).setChecked(true);
+        } else if (fragment == 2){
+            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, recommentFragment).commit();
+            bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        } else if (fragment == 3){
+            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, bookFragment).commit();
+            bottomNavigationView.getMenu().getItem(2).setChecked(true);
+        } else if (fragment == 4){
+            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, saleFragment).commit();
+            bottomNavigationView.getMenu().getItem(3).setChecked(true);
+        } else if (fragment == 5){
+            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, profileFragment).commit();
+            bottomNavigationView.getMenu().getItem(3).setChecked(true);
+        } else {
+            getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, homeFragment).commit();
+            bottomNavigationView.getMenu().getItem(0).setChecked(true);
+        }
+        
+    }
+
+
 }
