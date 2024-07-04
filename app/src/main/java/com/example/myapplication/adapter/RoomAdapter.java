@@ -7,6 +7,7 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.DetailActivity;
+import com.example.myapplication.FillDetail;
 import com.example.myapplication.R;
 import com.example.myapplication.model.Room;
 
@@ -40,6 +42,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
     @SuppressLint("DiscouragedApi")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.txtTitle.setText(rooms.get(position).getTitle());
         int drawableID = holder.itemView.getContext().getResources().getIdentifier(
                 rooms.get(position).getImg(),
                 "drawable",
@@ -50,6 +53,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
                 .load(drawableID)
                 .into(holder.img);
 
+
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,6 +62,7 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
                 holder.itemView.getContext().startActivity(intent);
             }
         });
+
     }
     @Override
     public int getItemCount() {
@@ -68,11 +73,11 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
         ImageView img;
         TextView txtTitle;
         TextView txtDescription;
-        TextView fee;
         ConstraintLayout mainLayout;
         @SuppressLint("WrongViewCast")
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            txtTitle = itemView.findViewById(R.id.namehotel_tophotel);
             img = itemView.findViewById(R.id.img_room);
             mainLayout = itemView.findViewById(R.id.room_layout);
         }

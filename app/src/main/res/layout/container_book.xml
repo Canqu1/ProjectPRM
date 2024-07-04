@@ -8,12 +8,10 @@
     tools:context=".DetailActivity"
     android:background="@drawable/drawable_shape">
 
-
-
   <ImageView
       android:id="@+id/img_detail"
       android:layout_width="match_parent"
-      android:layout_height="427dp"
+      android:layout_height="250dp"
       app:layout_constraintBottom_toTopOf="@+id/detail_layout"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -87,16 +85,11 @@
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="359dp"
-        android:layout_height="253dp"
-        android:layout_gravity="top|left"
-        android:layout_marginLeft="23.84dp"
-        android:layout_marginTop="147.5dp"
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:includeFontPadding="false"
-        android:maxLines="1"
-        android:singleLine="true"
-        android:text="Description"
+        android:text="Fusion Original Saigon Centre has a restaurant, outdoor swimming pool, a fitness center and bar in Ho Chi Minh City. Among the facilities at this property are a 24-hour front desk and room service, along with free WiFi throughout the property."
         android:textColor="#FF000000"
         android:textSize="20dp" />
 
@@ -135,9 +128,9 @@
           android:src="@drawable/save" />
     </LinearLayout>
 
-    <LinearLayout
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/book_room"
-        android:layout_width="wrap_content"
+        android:layout_width="166dp"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginTop="4dp"
@@ -145,19 +138,11 @@
         android:background="@drawable/drawable_shape_1"
         android:clipToPadding="false"
         android:gravity="center"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:text="Book now">
 
-      <TextView
-          android:id="@+id/txt_book"
-          android:layout_width="248dp"
-          android:layout_height="49dp"
-          android:gravity="center"
-          android:includeFontPadding="false"
-          android:maxLines="2"
-          android:text="Book now"
-          android:textColor="#FF010101"
-          android:textSize="20dp" />
-    </LinearLayout>
+
+    </androidx.appcompat.widget.AppCompatButton>
 
 
   </FrameLayout>

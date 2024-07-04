@@ -16,256 +16,73 @@
         app:srcCompat="@drawable/logo"
         tools:ignore="MissingConstraints" />
 
-    <FrameLayout
-        android:id="@+id/container_group"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/_80"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Log In"
+        android:textColor="@color/white"
+        android:textSize="32dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/text_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <EditText
+        android:id="@+id/text_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/container_name_edit_text"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtpass"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/txtpass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/container_name_edit_text"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:paddingLeft="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/image_sign_in_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/image_sign_in_button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/drawable_shape_1"
+        android:text="LOG IN"
+        android:textColor="@color/white"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageView2"
-        app:layout_constraintVertical_bias="0.45"
-        tools:layout_editor_absoluteX="130dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/image_email_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="314dp"
-            android:layout_marginBottom="219dp"
-            android:background="@drawable/image_email_edit_text"
-            android:scaleType="centerCrop" />
-
-        <ImageButton
-            android:id="@+id/image_sign_in_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="475dp"
-            android:layout_marginBottom="58dp"
-            android:background="@drawable/image_sign_in_button"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:id="@+id/image_password_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="386dp"
-            android:layout_marginBottom="147dp"
-            android:background="@drawable/image_password_edit_text"
-            android:scaleType="centerCrop" />
-
-        <EditText
-            android:id="@+id/text_pwd"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="79dp"
-            android:layout_marginTop="390dp"
-            android:layout_marginBottom="130dp"
-            android:gravity="left|center_vertical"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="#FF010101"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/text_login_button"
-            android:layout_width="match_parent"
-            android:layout_height="21dp"
-            android:layout_marginLeft="167dp"
-            android:layout_marginTop="491dp"
-            android:layout_marginRight="167dp"
-            android:layout_marginBottom="73dp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="LOGIN"
-            android:textColor="#FF010101"
-            android:textSize="13dp" />
-
-        <EditText
-            android:id="@+id/text_uname"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginLeft="79dp"
-            android:layout_marginTop="320dp"
-            android:layout_marginBottom="200dp"
-            android:gravity="left|center_vertical"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:textColor="#FF010101"
-            android:textSize="20dp" />
-
-        <TextView
-            android:id="@+id/text_or"
-            android:layout_width="match_parent"
-            android:layout_height="20dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="184dp"
-            android:layout_marginTop="251dp"
-            android:layout_marginRight="179dp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="OR"
-            android:textColor="#FF808080"
-            android:textSize="13dp" />
-
-        <TextView
-            android:id="@+id/text_please_sign_in"
-            android:layout_width="match_parent"
-            android:layout_height="23dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="93dp"
-            android:layout_marginTop="76dp"
-            android:layout_marginRight="51dp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Please sign in to continue"
-            android:textColor="#FF808080"
-            android:textSize="15dp" />
-
-        <TextView
-            android:id="@+id/text_login"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="132dp"
-            android:layout_marginRight="128dp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Login"
-            android:textColor="#FFFFFFFF"
-            android:textSize="36dp" />
-
-        <TextView
-            android:id="@+id/text_forgot_password"
-            android:layout_width="171dp"
-            android:layout_height="19dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="566dp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Forgot Password ?"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/text_sign_up"
-            android:layout_width="match_parent"
-            android:layout_height="19dp"
-            android:layout_marginLeft="273dp"
-            android:layout_marginTop="566dp"
-            android:gravity="center"
-            android:includeFontPadding="false"
-            android:maxLines="1"
-            android:singleLine="true"
-            android:text="Sign up now !"
-            android:textColor="#FFFFFFFF"
-            android:textSize="12dp" />
-
-        <ImageView
-            android:id="@+id/image_facebook"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="top|left"
-            android:layout_marginLeft="77dp"
-            android:layout_marginTop="150dp"
-            android:background="@drawable/image_facebook"
-            android:scaleType="centerInside" />
-
-        <ImageView
-            android:id="@+id/image_google"
-            android:layout_width="70dp"
-            android:layout_height="64dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="164dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginRight="160dp"
-            android:background="@drawable/image_google"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:id="@+id/image_twitter"
-            android:layout_width="71dp"
-            android:layout_height="64dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="252dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginRight="71dp"
-            android:background="@drawable/image_twitter"
-            android:scaleType="centerCrop" />
-
-        <ImageView
-            android:id="@+id/image_google1"
-            android:layout_width="39dp"
-            android:layout_height="38dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="176dp"
-            android:layout_marginTop="163dp"
-            android:layout_marginRight="173dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/image_google1" />
-
-        <ImageView
-            android:id="@+id/image_facebook1"
-            android:layout_width="45dp"
-            android:layout_height="45dp"
-            android:layout_gravity="top|left"
-            android:layout_marginLeft="87dp"
-            android:layout_marginTop="159dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/image_facebook1" />
-
-        <ImageView
-            android:id="@+id/image_twitter1"
-            android:layout_width="39dp"
-            android:layout_height="38dp"
-            android:layout_gravity="top"
-            android:layout_marginLeft="265dp"
-            android:layout_marginTop="163dp"
-            android:layout_marginRight="84dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/image_twitter1" />
-
-        <ImageView
-            android:id="@+id/image_customer"
-            android:layout_width="26dp"
-            android:layout_height="25dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="328dp"
-            android:layout_marginBottom="232dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/image_customer" />
-
-        <ImageView
-            android:id="@+id/image_password"
-            android:layout_width="26dp"
-            android:layout_height="25dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="399dp"
-            android:layout_marginBottom="161dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/image_password" />
-
-        <ImageView
-            android:id="@+id/image_hide"
-            android:layout_width="26dp"
-            android:layout_height="25dp"
-            android:layout_marginLeft="337dp"
-            android:layout_marginTop="400dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="160dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/image_hide" />
-    </FrameLayout>
+    <TextView
+        android:id="@+id/text_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create new account!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_sign_in_button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

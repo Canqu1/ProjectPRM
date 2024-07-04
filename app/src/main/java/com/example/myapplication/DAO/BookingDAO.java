@@ -10,7 +10,7 @@ import com.example.myapplication.Entities.Booking;
 import java.util.List;
 
 @Dao
-public interface BookingDAO {
+public interface    BookingDAO {
     @Query("SELECT * FROM Booking")
     List<Booking> getAll();
     @Query("SELECT * FROM Booking WHERE bid IN (:bookingIds)")

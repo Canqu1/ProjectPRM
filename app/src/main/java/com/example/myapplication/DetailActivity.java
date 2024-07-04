@@ -1,8 +1,11 @@
 package com.example.myapplication;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,7 +19,7 @@ import com.bumptech.glide.Glide;
 import com.example.myapplication.model.Room;
 
 public class DetailActivity extends AppCompatActivity {
-    private TextView bookbtn;
+    private Button bookbtn;
     private TextView txtTitle, txtDescription;
     private ImageView picRoom;
     private Room object;
@@ -28,10 +31,21 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.container_book);
         innitView();
         getBundle();
+        setOnClickListener();
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+    }
+
+    private void setOnClickListener() {
+        bookbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DetailActivity.this, SelectDetailRoom.class);
+
+            }
         });
     }
 
@@ -76,8 +90,9 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+
     private void innitView() {
-        bookbtn = findViewById(R.id.text_book_now);
+        bookbtn = findViewById(R.id.book_room);
         txtTitle = findViewById(R.id.txtTitle);
         txtDescription = findViewById(R.id.description);
         picRoom = findViewById(R.id.img_detail);

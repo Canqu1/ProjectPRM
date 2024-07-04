@@ -1,68 +1,80 @@
 package com.example.myapplication;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.myapplication.DAO.FRoomDatabase;
 import com.example.myapplication.DAO.UserDAO;
 import com.example.myapplication.Entities.User;
 
-public class LoginActivity extends AppCompatActivity{
-    ImageButton b1;
-    TextView tx1,txt_register;
-    EditText ed1 , ed2;
+public class LoginActivity extends AppCompatActivity {
+    Button b1;
+    TextView txt_register;
+    EditText ed1, ed2;
+
+    public void findViewById() {
+        b1 = findViewById(R.id.image_sign_in_button);
+        ed1 = findViewById(R.id.text_email);
+        ed2 = findViewById(R.id.txtpass);
+        txt_register = findViewById(R.id.text_sign_up);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.container_login);
-        b1 = (ImageButton)findViewById(R.id.image_sign_in_button);
-        ed1 = (EditText)findViewById(R.id.text_uname);
-        ed2 = (EditText)findViewById(R.id.text_pwd);
-        tx1 = (TextView)findViewById(R.id.text_please_sign_in);
-        txt_register = findViewById(R.id.text_sign_up);
-        //tx1.setVisibility(View.GONE);
+        findViewById();
+        setOnClickListener();
+        others();
+    }
 
-        FRoomDatabase db = Room.databaseBuilder(getApplicationContext(),
-                FRoomDatabase.class, "FRoomDB1").allowMainThreadQueries().build();
-        UserDAO userDao = db.userDao();
+    private void others() {
+    }
+
+    public void setOnClickListener() {
+        b1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String emailClient = ed1.getText().toString();
+                String passwordClient = ed2.getText().toString();
+
+                FRoomDatabase db = Room.databaseBuilder(getApplicationContext(),
+                                FRoomDatabase.class, "FRoomDB1")
+                        .addMigrations(FRoomDatabase.MIGRATION_1_2)
+                        .allowMainThreadQueries()
+                        .build();
+                UserDAO userDAO = db.userDao();
+
+              User userId = userDAO.findByName(emailClient);
+                if (userId != null) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Log in successfully!", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(i);
+                } else {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Incorrect account or password!", Toast.LENGTH_LONG);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
+            }
+        });
 
         txt_register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                User u = userDao.findByName(ed1.getText().toString());
+            public void onClick(View view) {
                 Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivity(i);
             }
         });
-        b1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                User u = userDao.findByName(ed1.getText().toString());
-                if(u == null){
-                    tx1.setBackgroundColor(Color.RED);
-                    tx1.setText("no user");
-                }
-                if(!u.password.equals(ed2.getText().toString()) ){
-                    tx1.setBackgroundColor(Color.RED);
-                    tx1.setText("Wrong password");
-                }else{
-                    tx1.setBackgroundColor(Color.RED);
-                    tx1.setText("Logged in");
-                    Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                    i.putExtra("uid",u.uid);
-                    startActivity(i);
-                }
-            }
-        });
-
-
     }
 }

@@ -30,15 +30,15 @@ public class ProfileActivity extends AppCompatActivity {
                 FRoomDatabase.class, "FRoomDB1").allowMainThreadQueries().build();
         UserDAO userDao = db.userDao();
         User u = userDao.loadByIds(uid);
-        ed1.setText(u.fullname);
+        ed1.setText(u.username);
         ed2.setText(u.email);
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(ed1.getText().toString()!="".trim() ||ed1.getText().toString()!="".trim()){
-                    u.fullname = ed1.getText().toString();
+                    u.username = ed1.getText().toString();
                     u.email = ed2.getText().toString();
                     userDao.Upsert(u);
-                    ed1.setText(u.fullname);
+                    ed1.setText(u.username);
                     ed2.setText(u.email);
                 }else{
                     System.out.println("fail");

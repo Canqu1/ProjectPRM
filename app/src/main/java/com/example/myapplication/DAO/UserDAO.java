@@ -19,14 +19,18 @@ public interface UserDAO {
     @Query("SELECT * FROM User WHERE uid IN (:userIds)")
     List<User> loadAllByIds(int[] userIds);
 
+    @Query("SELECT uid FROM User WHERE email = :emailClient AND password = :passwordClient")
+    Integer getUserIdByEmailAndPassword(String emailClient, String passwordClient);
+
     @Query("SELECT * FROM User WHERE uid IN (:userId) LIMIT 1")
     User loadByIds(int userId);
     @Query("SELECT * FROM User WHERE username LIKE (:name) LIMIT 1")
     User findByName (String name);
     @Insert
-    void insertAll(User... users);
+    void insertAll(User users);
     @Upsert
     void Upsert(User user);
+
     @Delete
     void delete(User user);
 
