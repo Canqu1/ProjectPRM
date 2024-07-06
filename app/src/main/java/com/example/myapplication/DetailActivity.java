@@ -16,7 +16,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.bumptech.glide.Glide;
-import com.example.myapplication.model.Room;
+import com.example.myapplication.Entities.Room;
 
 public class DetailActivity extends AppCompatActivity {
     private Button bookbtn;
@@ -43,8 +43,9 @@ public class DetailActivity extends AppCompatActivity {
         bookbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(DetailActivity.this, SelectDetailRoom.class);
-
+                Intent i = new Intent(DetailActivity.this, FillDetail.class);
+                i.putExtra("object",object);
+                startActivity(i);
             }
         });
     }

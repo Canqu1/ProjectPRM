@@ -9,6 +9,15 @@ import java.io.Serializable;
 public class Room implements Serializable {
     @PrimaryKey(autoGenerate = true)
     public int rid;
+
+    public int getRid() {
+        return rid;
+    }
+
+    public void setRid(int rid) {
+        this.rid = rid;
+    }
+
     private String title;
     private String img;
     private String description;

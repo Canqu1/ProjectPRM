@@ -39,4 +39,5 @@ public abstract class FRoomDatabase extends RoomDatabase {
     public abstract RoleDAO roleDao();
     public abstract CustomerDAO customerDao();
     public abstract BookingDAO bookingDao();
+    public abstract RoomDAO roomDao();
 }

@@ -114,16 +114,6 @@
                                 android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/titleEmail2"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/encodesanssemicondensedmedium"
-                                android:text="Room Type"
-                                android:textColor="#000000"
-                                android:textSize="15sp" />
-
-                            <TextView
                                 android:id="@+id/titleEmail3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -150,7 +140,7 @@
                                 android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/_phonepaymentdetail"
+                                android:id="@+id/checkin"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
@@ -160,22 +150,12 @@
                                 android:textSize="15sp" />
 
                             <TextView
-                                android:id="@+id/_emailpaymentdetail"
+                                android:id="@+id/checkout"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/encodesanssemicondensedmedium"
                                 android:text="21/10/2001"
-                                android:textColor="#000000"
-                                android:textSize="15sp" />
-
-                            <TextView
-                                android:id="@+id/_roomtypehoteldetail"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="5dp"
-                                android:fontFamily="@font/encodesanssemicondensedmedium"
-                                android:text="Double room"
                                 android:textColor="#000000"
                                 android:textSize="15sp" />
 

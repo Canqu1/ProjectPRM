@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,7 +83,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
-
     private void findViewById() {
         txLogin = findViewById(R.id.txt_Login);
         btnRegister = findViewById(R.id.btn_register);
