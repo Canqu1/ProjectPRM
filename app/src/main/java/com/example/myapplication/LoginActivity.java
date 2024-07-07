@@ -60,6 +60,8 @@ public class LoginActivity extends AppCompatActivity {
                     toast.setGravity(Gravity.CENTER, 0, 0);
                     toast.show();
                     Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                    i.putExtra("uid",userId.uid);
+                    userId.setRole("login");
                     startActivity(i);
                 } else {
                     Toast toast = Toast.makeText(getApplicationContext(), "Incorrect account or password!", Toast.LENGTH_LONG);
