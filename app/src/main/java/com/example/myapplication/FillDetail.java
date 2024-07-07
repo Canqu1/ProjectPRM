@@ -51,17 +51,32 @@ public class FillDetail  extends AppCompatActivity {
                 .addMigrations(FRoomDatabase.MIGRATION_1_2)
                 .allowMainThreadQueries()
                 .build();
+
+        int uid = getIntent().getExtras().getInt("uid", -1);
         object = (Room) getIntent().getSerializableExtra("object");
-        _namehoteldetail.setText(object.getTitle());
+
+        if (object != null) {
+            _namehoteldetail.setText(object.getTitle());
+        } else {
+            _namehoteldetail.setText("Unknown Room");
+        }
+
         Calendar calendar = Calendar.getInstance();
-        String Format = "dd/MM/yyyy";
-        SimpleDateFormat date_from = new SimpleDateFormat(Format, Locale.TAIWAN);
-        _checkinhoteldetail.setText(date_from.format(calendar.getTime()));
-        _checkouthoteldetail.setText(date_from.format(calendar.getTime()));
+        String format = "dd/MM/yyyy";
+        SimpleDateFormat dateFrom = new SimpleDateFormat(format, Locale.TAIWAN);
+        _checkinhoteldetail.setText(dateFrom.format(calendar.getTime()));
+        _checkouthoteldetail.setText(dateFrom.format(calendar.getTime()));
 
-        UserDAO userDAO = db.userDao();
+        UserDAO userDao = db.userDao();
+        User user = userDao.loadByIds(uid);
 
-
+        if (user != null) {
+            _editTextFullName.setText(user.username);
+            _editTextEmail.setText(user.email);
+        } else {
+            _editTextFullName.setText("Unknown User");
+            _editTextEmail.setText("Unknown Email");
+        }
     }
 
     @Override

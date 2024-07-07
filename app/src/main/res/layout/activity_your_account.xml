@@ -18,11 +18,10 @@
         app:layout_constraintTop_toTopOf="parent" />
     <!--    CHỮ BLOG ĐẦU TRANG-->
     <TextView
-        android:id="@+id/_125"
+        android:id="@+id/txtAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_25dp"
-        android:fontFamily="@font/robotoregular"
         android:text="Your account"
         android:textSize="@dimen/_text_24sp"
         android:textColor="@color/white"
@@ -37,7 +36,7 @@
     <!--    text name customer-->
 
     <TextView
-        android:id="@+id/_127"
+        android:id="@+id/txtName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
@@ -53,24 +52,23 @@
     <!--    text birthday customer-->
 
     <EditText
-        android:id="@+id/_128"
+        android:id="@+id/edtName"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
         android:layout_marginTop="135dp"
         android:layout_marginEnd="@dimen/_16dp"
         android:ems="12"
-        android:fontFamily="@font/robotoregular"
         android:hint="Your name"
         android:inputType="text"
         android:textSize="@dimen/_18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/_127"
+        app:layout_constraintStart_toEndOf="@+id/txtName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/_129"
+        android:id="@+id/txtDOB"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_40dp"
         android:layout_marginStart="@dimen/_32dp"
@@ -80,12 +78,12 @@
         android:textSize="@dimen/_20dp"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_127" />
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
 
     <!-- EMAIL -->
     <!--    text email customer-->
     <EditText
-        android:id="@+id/_130"
+        android:id="@+id/edtDOB"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -95,16 +93,15 @@
         android:cursorVisible="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:fontFamily="@font/robotoregular"
         android:hint="Birthday"
         android:textSize="@dimen/_18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/_129"
-        app:layout_constraintTop_toBottomOf="@+id/_128" />
+        app:layout_constraintStart_toEndOf="@+id/txtDOB"
+        app:layout_constraintTop_toBottomOf="@+id/edtName" />
 
     <TextView
-        android:id="@+id/_131"
+        android:id="@+id/txtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
@@ -113,29 +110,28 @@
         android:textSize="@dimen/_20dp"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_129" />
+        app:layout_constraintTop_toBottomOf="@+id/txtDOB" />
 
     <!--    text gender customer-->
 
     <EditText
-        android:id="@+id/_132"
+        android:id="@+id/edtEmail"
         android:layout_width="@dimen/_0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
         android:layout_marginTop="@dimen/_16dp"
         android:layout_marginEnd="@dimen/_16dp"
         android:ems="12"
-        android:fontFamily="@font/robotoregular"
         android:hint="Email"
         android:inputType="text"
         android:textSize="@dimen/_18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.051"
-        app:layout_constraintStart_toEndOf="@+id/_131"
-        app:layout_constraintTop_toBottomOf="@+id/_130" />
+        app:layout_constraintStart_toEndOf="@+id/txtEmail"
+        app:layout_constraintTop_toBottomOf="@+id/edtDOB" />
 
     <TextView
-        android:id="@+id/_133"
+        android:id="@+id/txtGender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
@@ -144,51 +140,47 @@
         android:textSize="@dimen/_20dp"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_131" />
+        app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
 
     <!--    Checkbox male-->
 
     <RadioGroup
-        android:id="@+id/_220"
+        android:id="@+id/rdo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:orientation="horizontal"
-        app:layout_constraintStart_toEndOf="@+id/_133"
-        app:layout_constraintTop_toBottomOf="@+id/_132">
+        app:layout_constraintStart_toEndOf="@+id/txtGender"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail">
 
         <RadioButton
-            android:id="@+id/_134"
+            android:id="@+id/btnMale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="Male"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18dp"
-            app:layout_constraintStart_toEndOf="@+id/_133"
-            app:layout_constraintTop_toBottomOf="@+id/_132" />
+            android:textSize="@dimen/_18dp" />
 
         <!--    PHONE-->
 
         <RadioButton
-            android:id="@+id/_135"
+            android:id="@+id/btnFmale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:checked="false"
             android:text="Female"
             android:textColor="@color/white"
-            android:textSize="@dimen/_18dp"
-            app:layout_constraintStart_toEndOf="@+id/_134"
-            app:layout_constraintTop_toBottomOf="@+id/_132" />
+            android:textSize="@dimen/_18dp" />
 
     </RadioGroup>
     <!--    Checkbox female-->
 
     <!--    TEXT PHONE-->
     <TextView
-        android:id="@+id/_136"
+        android:id="@+id/txtPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_32dp"
@@ -197,28 +189,27 @@
         android:textSize="@dimen/_20dp"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_133" />
+        app:layout_constraintTop_toBottomOf="@+id/txtGender" />
 
     <!--    BTN SAVE-->
 
-    <EditText
-        android:id="@+id/_137"
-        android:layout_width="@dimen/_0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="12"
-        android:fontFamily="@font/robotoregular"
-        android:hint="Phone"
-        android:inputType="number"
-        android:textSize="@dimen/_18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/_136"
-        app:layout_constraintTop_toBottomOf="@+id/_220" />
+<!--    <EditText-->
+<!--        android:id="@+id/edtPhone"-->
+<!--        android:layout_width="@dimen/_0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="24dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="16dp"-->
+<!--        android:ems="12"-->
+<!--        android:hint="Phone"-->
+<!--        android:inputType="number"-->
+<!--        android:textSize="@dimen/_18dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/txtPhone"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/rdo" />-->
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_138"
+        android:id="@+id/btnSave"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
@@ -230,10 +221,10 @@
         android:textSize="@dimen/_text_12sp"
         app:cornerRadius="@dimen/_20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_136" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/_139"
+        android:id="@+id/btnCancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
@@ -248,7 +239,7 @@
         app:cornerRadius="@dimen/_20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/_138"
-        app:layout_constraintTop_toBottomOf="@+id/_136" />
+        app:layout_constraintStart_toEndOf="@+id/btnSave"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

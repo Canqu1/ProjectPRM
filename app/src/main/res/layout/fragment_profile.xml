@@ -83,8 +83,8 @@
 
         <TextView
             android:id="@+id/text_edit_image"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
+            android:layout_width="106dp"
+            android:layout_height="23dp"
             android:layout_gravity="center"
             android:layout_marginTop="4dp"
             android:gravity="left|center_vertical"
@@ -93,7 +93,7 @@
             android:singleLine="true"
             android:text="Edit image"
             android:textColor="#FFFFFFFF"
-            android:textSize="12dp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.262"
             app:layout_constraintStart_toStartOf="parent"
@@ -112,26 +112,30 @@
             app:layout_constraintTop_toBottomOf="@id/container_ellipse"
             tools:ignore="MissingConstraints" />
 
-        <EditText
+        <TextView
             android:id="@+id/edt_name"
             android:layout_width="387dp"
             android:layout_height="54dp"
+            android:gravity="center"
             android:layout_marginTop="70dp"
             android:background="@drawable/container_name_edit_text"
             android:drawablePadding="20dp"
             android:hint="Name"
+            android:textSize="@dimen/_18dp"
             app:layout_constraintLeft_toLeftOf="@id/layout_bot"
             app:layout_constraintRight_toRightOf="@id/layout_bot"
             app:layout_constraintTop_toBottomOf="@id/container_camera" />
 
-        <EditText
+        <TextView
             android:id="@+id/edt_mail"
             android:layout_width="387dp"
             android:layout_height="54dp"
             android:layout_marginTop="20dp"
+            android:gravity="center"
             android:background="@drawable/container_name_edit_text"
             android:drawablePadding="20dp"
             android:ellipsize="middle"
+            android:textSize="@dimen/_18dp"
             android:hint="Mail"
             app:layout_constraintLeft_toLeftOf="@id/layout_bot"
             app:layout_constraintRight_toRightOf="@id/layout_bot"

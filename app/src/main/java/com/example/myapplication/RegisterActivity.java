@@ -53,11 +53,11 @@ public class RegisterActivity extends AppCompatActivity {
                         && !TextUtils.isEmpty(email) && !TextUtils.isEmpty(confirmPassword)) {
                     if (password.equals(confirmPassword)) {
                         // Generate a random UID
-                        Random generator = new Random();
-                        int randomUid = generator.nextInt();
+                        //Random generator = new Random();
+                        //int randomUid = generator.nextInt();
 
                         // Create a new User object
-                        User newUser = new User(randomUid, userName, password, "", email, "", "");
+                        User newUser = new User(userName,password,"",email,"","");
 
                         // Save the user to the database
                         FRoomDatabase db = Room.databaseBuilder(getApplicationContext(),

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.myapplication.DAO.FRoomDatabase;
 import com.example.myapplication.DAO.UserDAO;
@@ -25,7 +26,7 @@ import com.example.myapplication.YourAccount;
 public class ProfileFragment extends Fragment {
 
     Button b1, btn_update, btnlog_out;
-    EditText ed1, ed2;
+    TextView ed1, ed2;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

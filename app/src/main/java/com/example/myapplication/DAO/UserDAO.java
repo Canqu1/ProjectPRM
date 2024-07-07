@@ -4,6 +4,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 import androidx.room.Upsert;
 
 import com.example.myapplication.Entities.User;
@@ -19,18 +20,22 @@ public interface UserDAO {
     @Query("SELECT * FROM User WHERE uid IN (:userIds)")
     List<User> loadAllByIds(int[] userIds);
 
-    @Query("SELECT uid FROM User WHERE email = :emailClient AND password = :passwordClient")
-    Integer getUserIdByEmailAndPassword(String emailClient, String passwordClient);
+    @Query("SELECT uid FROM User WHERE email = :emailClient")
+    User getUserIdByEmailAndPassword(String emailClient);
 
     @Query("SELECT * FROM User WHERE uid IN (:userId) LIMIT 1")
     User loadByIds(int userId);
-    @Query("SELECT * FROM User WHERE username LIKE (:name) LIMIT 1")
+    @Query("SELECT * FROM User WHERE email LIKE (:name) LIMIT 1")
     User findByName (String name);
     @Insert
     void insertAll(User users);
     @Upsert
     void Upsert(User user);
+    @Query("SELECT * FROM user WHERE uid = :role LIMIT 1")
+    User getUserByRole(String role);
 
+    @Update
+    void updateUser(User user);
     @Delete
     void delete(User user);
 

@@ -19,8 +19,12 @@ public class User {
     public User() {
     }
 
-    public User(int uid, String username, String password,  String address, String email, String dob, String role) {
-        this.uid = uid;
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User( String username, String password, String address, String email, String dob, String role) {
         this.username = username;
         this.password = password;
         this.address = address;
