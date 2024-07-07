@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_shape"
+    tools:context=".YourAccount">
+
+    <ImageView
+        android:id="@+id/_124"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/_20dp"
+        android:layout_marginTop="@dimen/_30dp"
+        android:src="@drawable/icon_back_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    CHỮ BLOG ĐẦU TRANG-->
+    <TextView
+        android:id="@+id/_125"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25dp"
+        android:fontFamily="@font/robotoregular"
+        android:text="Your account"
+        android:textSize="@dimen/_text_24sp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--    btn change avatar-->
+
+    <!--  NAME  -->
+
+    <!--    text name customer-->
+
+    <TextView
+        android:id="@+id/_127"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="140dp"
+        android:text="Name"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--  BIRTHDAY  -->
+
+    <!--    text birthday customer-->
+
+    <EditText
+        android:id="@+id/_128"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="135dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:ems="12"
+        android:fontFamily="@font/robotoregular"
+        android:hint="Your name"
+        android:inputType="text"
+        android:textSize="@dimen/_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/_127"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/_129"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40dp"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_25dp"
+        android:gravity="center"
+        android:text="Birthday"
+        android:textSize="@dimen/_20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_127" />
+
+    <!-- EMAIL -->
+    <!--    text email customer-->
+    <EditText
+        android:id="@+id/_130"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:fontFamily="@font/robotoregular"
+        android:hint="Birthday"
+        android:textSize="@dimen/_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/_129"
+        app:layout_constraintTop_toBottomOf="@+id/_128" />
+
+    <TextView
+        android:id="@+id/_131"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_32dp"
+        android:text="Email"
+        android:textSize="@dimen/_20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_129" />
+
+    <!--    text gender customer-->
+
+    <EditText
+        android:id="@+id/_132"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_16dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:ems="12"
+        android:fontFamily="@font/robotoregular"
+        android:hint="Email"
+        android:inputType="text"
+        android:textSize="@dimen/_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toEndOf="@+id/_131"
+        app:layout_constraintTop_toBottomOf="@+id/_130" />
+
+    <TextView
+        android:id="@+id/_133"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_32dp"
+        android:text="Gender"
+        android:textSize="@dimen/_20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_131" />
+
+    <!--    Checkbox male-->
+
+    <RadioGroup
+        android:id="@+id/_220"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/_133"
+        app:layout_constraintTop_toBottomOf="@+id/_132">
+
+        <RadioButton
+            android:id="@+id/_134"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Male"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18dp"
+            app:layout_constraintStart_toEndOf="@+id/_133"
+            app:layout_constraintTop_toBottomOf="@+id/_132" />
+
+        <!--    PHONE-->
+
+        <RadioButton
+            android:id="@+id/_135"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:checked="false"
+            android:text="Female"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_18dp"
+            app:layout_constraintStart_toEndOf="@+id/_134"
+            app:layout_constraintTop_toBottomOf="@+id/_132" />
+
+    </RadioGroup>
+    <!--    Checkbox female-->
+
+    <!--    TEXT PHONE-->
+    <TextView
+        android:id="@+id/_136"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_32dp"
+        android:layout_marginTop="@dimen/_40dp"
+        android:text="Phone"
+        android:textSize="@dimen/_20dp"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_133" />
+
+    <!--    BTN SAVE-->
+
+    <EditText
+        android:id="@+id/_137"
+        android:layout_width="@dimen/_0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:ems="12"
+        android:fontFamily="@font/robotoregular"
+        android:hint="Phone"
+        android:inputType="number"
+        android:textSize="@dimen/_18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/_136"
+        app:layout_constraintTop_toBottomOf="@+id/_220" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/_138"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginStart="@dimen/_16dp"
+        android:layout_marginTop="@dimen/_32dp"
+        android:background="@drawable/drawable_shape_1"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_text_12sp"
+        app:cornerRadius="@dimen/_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/_136" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/_139"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginStart="@dimen/_180dp"
+        android:layout_marginTop="@dimen/_32dp"
+        android:layout_marginEnd="@dimen/_16dp"
+        android:background="@drawable/drawable_shape_1"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_text_12sp"
+        app:cornerRadius="@dimen/_20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/_138"
+        app:layout_constraintTop_toBottomOf="@+id/_136" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
