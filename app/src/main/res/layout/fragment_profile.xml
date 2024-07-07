@@ -112,7 +112,7 @@
             app:layout_constraintTop_toBottomOf="@id/container_ellipse"
             tools:ignore="MissingConstraints" />
 
-        <TextView
+        <EditText
             android:id="@+id/edt_name"
             android:layout_width="387dp"
             android:layout_height="54dp"
@@ -124,7 +124,7 @@
             app:layout_constraintRight_toRightOf="@id/layout_bot"
             app:layout_constraintTop_toBottomOf="@id/container_camera" />
 
-        <TextView
+        <EditText
             android:id="@+id/edt_mail"
             android:layout_width="387dp"
             android:layout_height="54dp"
