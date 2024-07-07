@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:elevation="@dimen/_8dp"
+    app:cardCornerRadius="@dimen/_5dp"
+    android:layout_width="match_parent"
+    android:layout_marginStart="@dimen/_10dp"
+    android:layout_marginEnd="@dimen/_10dp"
+    android:layout_marginTop="@dimen/_10dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/room_layout">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/img_room"
+                android:layout_width="match_parent"
+                android:layout_height="255dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/room1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/namehotel_tophotel"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Son Ha Hotel"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
