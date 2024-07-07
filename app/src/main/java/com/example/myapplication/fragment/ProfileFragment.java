@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 import com.example.myapplication.DAO.FRoomDatabase;
 import com.example.myapplication.DAO.UserDAO;
@@ -22,45 +22,60 @@ import com.example.myapplication.LoginActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.YourAccount;
 
-
 public class ProfileFragment extends Fragment {
 
-    Button btn_update , btnlog_out;
-    TextView txtName, txtEmail;
+    Button b1, btn_update, btnlog_out;
+    EditText ed1, ed2;
 
+    @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        //findViewById
+
+        // Initialize UI elements
+        b1 = view.findViewById(R.id.btn_upd);
+        ed1 = view.findViewById(R.id.edt_name);
+        ed2 = view.findViewById(R.id.edt_mail);
         btn_update = view.findViewById(R.id.btn_upd);
         btnlog_out = view.findViewById(R.id.btn_logout);
-        txtName = view.findViewById(R.id.edt_name);
-        txtEmail = view.findViewById(R.id.edt_mail);
 
-        int uid = getActivity().getIntent().getExtras().getInt("uid");
-        FRoomDatabase db = Room.databaseBuilder(getActivity().getApplicationContext(),
-                FRoomDatabase.class, "FRoomDB1").allowMainThreadQueries().build();
+        // Retrieve user ID from intent
+        int uid = requireActivity().getIntent().getIntExtra("uid", -1);
+
+        // Initialize database
+        FRoomDatabase db = Room.databaseBuilder(requireContext(), FRoomDatabase.class, "FRoomDB1")
+                .allowMainThreadQueries().build();
         UserDAO userDao = db.userDao();
-        User u = userDao.loadByIds(uid);
-        txtName.setText(u.username);
-        txtEmail.setText(u.email);
 
-        btn_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), YourAccount.class);
-                startActivity(i);
+        // Load user data from database
+        User u = userDao.loadByIds(uid);
+        if (u != null) {
+            ed1.setText(u.username);
+            ed2.setText(u.email);
+        }
+
+        // Set up button click listeners
+        b1.setOnClickListener(v -> {
+            if (!ed1.getText().toString().trim().isEmpty() && !ed2.getText().toString().trim().isEmpty()) {
+                u.username = ed1.getText().toString();
+                u.email = ed2.getText().toString();
+                userDao.Upsert(u);
+                ed1.setText(u.username);
+                ed2.setText(u.email);
+            } else {
+                System.out.println("fail");
             }
         });
-        btnlog_out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(), LoginActivity.class);
-                startActivity(i);
-            }
+
+        btn_update.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity(), YourAccount.class);
+            startActivity(i);
+        });
+
+        btnlog_out.setOnClickListener(v -> {
+            Intent i = new Intent(getActivity(), LoginActivity.class);
+            startActivity(i);
         });
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

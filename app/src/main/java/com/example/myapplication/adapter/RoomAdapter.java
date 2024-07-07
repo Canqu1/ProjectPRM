@@ -42,12 +42,9 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
                 "drawable",
                 holder.itemView.getContext().getPackageName()
         );
-
         Glide.with(holder.itemView.getContext())
                 .load(drawableID)
                 .into(holder.img);
-
-
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +53,6 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
                 holder.itemView.getContext().startActivity(intent);
             }
         });
-
     }
     @Override
     public int getItemCount() {

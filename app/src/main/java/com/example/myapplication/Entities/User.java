@@ -16,7 +16,6 @@ public class User {
     public String email;
     public String dob;
     public String role;
-
     public User() {
     }
 
