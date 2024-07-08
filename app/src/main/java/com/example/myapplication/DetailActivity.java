@@ -44,7 +44,9 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(DetailActivity.this, FillDetail.class);
-                i.putExtra("object",object);
+                i.putExtra("object", object);
+                int uid = getIntent().getIntExtra("uid", -1);
+                i.putExtra("uid", uid);
                 startActivity(i);
             }
         });
@@ -64,33 +66,28 @@ public class DetailActivity extends AppCompatActivity {
                             .load(drawableID)
                             .into(picRoom);
                 } else {
-                    // Handle case where drawableID is not found
                     Log.e("DetailActivity", "Drawable resource not found for image path: " + imagePath);
                     Glide.with(this)
-                            .load(R.drawable.room1) // Replace with your placeholder image
+                            .load(R.drawable.room1)
                             .into(picRoom);
                 }
             } else {
-                // Handle case where imagePath is null or empty
                 Log.e("DetailActivity", "Image path is null or empty");
                 Glide.with(this)
-                        .load(R.drawable.room1) // Replace with your placeholder image
+                        .load(R.drawable.room1)
                         .into(picRoom);
             }
             txtTitle.setText(object.getTitle());
             txtDescription.setText(object.getDescription());
         } else {
-            // Handle case where object is null
             Log.e("DetailActivity", "Room object is null");
-            // Show default or error text/images
-            txtTitle.setText(object.getTitle()); // Replace with your default title
-            txtDescription.setText(object.getDescription()); // Replace with your default description
+            txtTitle.setText("Default Title");
+            txtDescription.setText("Default Description");
             Glide.with(this)
-                    .load(R.drawable.room2) // Replace with your placeholder image
+                    .load(R.drawable.room2)
                     .into(picRoom);
         }
     }
-
 
     private void innitView() {
         bookbtn = findViewById(R.id.book_room);

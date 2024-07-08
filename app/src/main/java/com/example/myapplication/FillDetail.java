@@ -40,7 +40,9 @@ public class FillDetail  extends AppCompatActivity {
         _300.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(FillDetail.this, MainActivity.class);
+                i.putExtra("fragment", 0);
+                startActivity(i);
             }
         });
     }

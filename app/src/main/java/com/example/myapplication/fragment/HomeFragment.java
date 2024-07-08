@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 
 import com.example.myapplication.DAO.FRoomDatabase;
 import com.example.myapplication.DAO.RoomDAO;
+import com.example.myapplication.DAO.UserDAO;
+import com.example.myapplication.Entities.User;
 import com.example.myapplication.R;
 import com.example.myapplication.adapter.RoomAdapter;
 import com.example.myapplication.Entities.Room;
@@ -29,11 +31,15 @@ public class HomeFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(),LinearLayoutManager.VERTICAL,false);
         RecyclerView recylcleViewRoom = view.findViewById(R.id.rcl_view);
         recylcleViewRoom.setLayoutManager(linearLayoutManager);
-        FRoomDatabase db = androidx.room.Room.databaseBuilder(this.getContext(),
-                        FRoomDatabase.class, "FRoomDB1")
-                .addMigrations(FRoomDatabase.MIGRATION_1_2)
-                .allowMainThreadQueries()
-                .build();
+        int uid = requireActivity().getIntent().getIntExtra("uid", -1);
+
+        // Initialize database
+        FRoomDatabase db = androidx.room.Room.databaseBuilder(requireContext(), FRoomDatabase.class, "FRoomDB1")
+                .allowMainThreadQueries().build();
+        UserDAO userDao = db.userDao();
+
+        // Load user data from database
+        User u = userDao.loadByIds(uid);
         RoomDAO roomDAO = db.roomDao();
 
         // Create an ArrayList of Room objects
@@ -44,9 +50,7 @@ public class HomeFragment extends Fragment {
         roomList.add(new Room("r4", "room4", "dsads", 0));
         roomList.add(new Room("r5", "room5", "dsads", 0));
         roomDAO.insertAll(roomList);
-        adapter2 = new RoomAdapter(roomList);
-        recylcleViewRoom.setAdapter(adapter2);
-        adapter2 = new RoomAdapter(roomList);
+        adapter2 = new RoomAdapter(roomList,u);
         recylcleViewRoom.setAdapter(adapter2);
     }
 

@@ -60,10 +60,7 @@ public class SaleFragment extends Fragment {
         roomList.add(new Room("Therapy advice ", "room3", des3, 0));
         roomList.add(new Room("Diet Activity", "room4", des4, 0));
         roomList.add(new Room("Book talk", "room5", des5, 0));
-        adapter2 = new RoomAdapter(roomList);
-        recylcleViewRoom.setAdapter(adapter2);
-        adapter2 = new RoomAdapter(roomList);
-        recylcleViewRoom.setAdapter(adapter2);
+
     }
     public SaleFragment() {
         // Required empty public constructor

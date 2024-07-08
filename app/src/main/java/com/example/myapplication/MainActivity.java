@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             bottomNavigationView.getMenu().getItem(3).setChecked(true);
         } else if (fragment == 5){
             getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, profileFragment).commit();
-            bottomNavigationView.getMenu().getItem(3).setChecked(true);
+            bottomNavigationView.getMenu().getItem(4).setChecked(true);
         } else {
             getSupportFragmentManager().beginTransaction().replace(R.id.framelayout, homeFragment).commit();
             bottomNavigationView.getMenu().getItem(0).setChecked(true);
