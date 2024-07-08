@@ -13,4 +13,14 @@ public class Booking {
     public int customerId;
     public int roomId;
 
+    public Booking() {
+    }
+
+    public Booking(String service, String bookDate, int time, int customerId, int roomId) {
+        this.service = service;
+        this.bookDate = bookDate;
+        this.time = time;
+        this.customerId = customerId;
+        this.roomId = roomId;
+    }
 }

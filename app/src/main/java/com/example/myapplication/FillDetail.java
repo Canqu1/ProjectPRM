@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.DAO.BookingDAO;
 import com.example.myapplication.DAO.FRoomDatabase;
 import com.example.myapplication.DAO.UserDAO;
+import com.example.myapplication.Entities.Booking;
 import com.example.myapplication.Entities.Room;
 import com.example.myapplication.Entities.User;
 
@@ -24,8 +26,13 @@ public class FillDetail  extends AppCompatActivity {
     String hotel_details_id, number_of_day_other, CheckIn, Checkout, user_id;
     EditText _editTextFullName, _editTextPhone, _editTextEmail;
     String name_client, phone_client, email_client;
-    Button _300;
+    Button _300, btn_continue;
     private Room object;
+    FRoomDatabase db = androidx.room.Room.databaseBuilder(this,
+                    FRoomDatabase.class, "FRoomDB1")
+            .addMigrations(FRoomDatabase.MIGRATION_1_2)
+            .allowMainThreadQueries()
+            .build();
     public void findViewById() {
         _namehoteldetail = findViewById(R.id._namehoteldetail);
         _checkinhoteldetail = findViewById(R.id.checkin);
@@ -35,12 +42,23 @@ public class FillDetail  extends AppCompatActivity {
         _editTextPhone = findViewById(R.id._editTextPhone);
         _editTextEmail = findViewById(R.id._editTextEmail);
         _300 = findViewById(R.id._300);
+        btn_continue = findViewById(R.id.buttonContinue);
     }
     private void setOnClickListener() {
         _300.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Intent i = new Intent(FillDetail.this, MainActivity.class);
+                int uid = getIntent().getExtras().getInt("uid", -1);
+                object = (Room) getIntent().getSerializableExtra("object");
+                UserDAO userDao = db.userDao();
+                User user = userDao.loadByIds(uid);
+                BookingDAO bookingDAO = db.bookingDao();
+                Booking b = new Booking(((Room)object).getTitle(),_checkinhoteldetail.toString(),3,uid,((Room)object).rid);
+                bookingDAO.insert(b);
+                i.putExtra("fragment", 0);
+                startActivity(i);
             }
         });
     }
@@ -51,6 +69,10 @@ public class FillDetail  extends AppCompatActivity {
                 .addMigrations(FRoomDatabase.MIGRATION_1_2)
                 .allowMainThreadQueries()
                 .build();
+
+
+
+        int uid = getIntent().getExtras().getInt("uid", -1);
         object = (Room) getIntent().getSerializableExtra("object");
         _namehoteldetail.setText(object.getTitle());
         Calendar calendar = Calendar.getInstance();
@@ -59,8 +81,17 @@ public class FillDetail  extends AppCompatActivity {
         _checkinhoteldetail.setText(date_from.format(calendar.getTime()));
         _checkouthoteldetail.setText(date_from.format(calendar.getTime()));
 
-        UserDAO userDAO = db.userDao();
+        UserDAO userDao = db.userDao();
+        User user = userDao.loadByIds(uid);
+        BookingDAO bookingDAO = db.bookingDao();
 
+        if (user != null) {
+            _editTextFullName.setText(user.username);
+            _editTextEmail.setText(user.email);
+        } else {
+            _editTextFullName.setText("Unknown User");
+            _editTextEmail.setText("Unknown Email");
+        }
 
     }
 

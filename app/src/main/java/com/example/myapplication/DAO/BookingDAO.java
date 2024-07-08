@@ -18,7 +18,8 @@ public interface    BookingDAO {
 
     @Upsert
     void insertAll(Booking... bookings);
-
+    @Upsert
+    void insert(Booking booking);
     @Delete
     void delete(Booking booking);
 
