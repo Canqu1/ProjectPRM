@@ -21,9 +21,7 @@ import java.util.Locale;
 
 public class FillDetail  extends AppCompatActivity {
     TextView _namehoteldetail, _checkinhoteldetail, _checkouthoteldetail, _roomtypehoteldetail, _pricehoteldetail;
-    String hotel_details_id, number_of_day_other, CheckIn, Checkout, user_id;
     EditText _editTextFullName, _editTextPhone, _editTextEmail;
-    String name_client, phone_client, email_client;
     Button _300;
     private Room object;
     public void findViewById() {
@@ -32,22 +30,33 @@ public class FillDetail  extends AppCompatActivity {
         _checkouthoteldetail = findViewById(R.id.checkout);
         _pricehoteldetail = findViewById(R.id._pricehoteldetail);
         _editTextFullName = findViewById(R.id._editTextFullName);
-        _editTextPhone = findViewById(R.id._editTextPhone);
         _editTextEmail = findViewById(R.id._editTextEmail);
         _300 = findViewById(R.id._300);
     }
     private void setOnClickListener() {
+        // Retrieve user ID from intent
+        int uid = getIntent().getIntExtra("uid", -1);
+
+        // Initialize database
+        FRoomDatabase db = androidx.room.Room.databaseBuilder(this, FRoomDatabase.class, "FRoomDB1")
+                .allowMainThreadQueries().build();
+        UserDAO userDao = db.userDao();
+
+        // Load user data from database
+        User u = userDao.loadByIds(uid);
         _300.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(FillDetail.this, MainActivity.class);
-                i.putExtra("fragment", 0);
+                Intent i = new Intent(FillDetail.this, Payment.class);
+                i.putExtra("object", object);
+                i.putExtra("uid",u.uid );
                 startActivity(i);
             }
         });
     }
 
     private void others() {
+        object = (Room) getIntent().getSerializableExtra("object");
         FRoomDatabase db = androidx.room.Room.databaseBuilder(this,
                         FRoomDatabase.class, "FRoomDB1")
                 .addMigrations(FRoomDatabase.MIGRATION_1_2)

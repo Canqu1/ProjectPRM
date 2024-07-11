@@ -16,16 +16,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.myapplication.DAO.BookingDAO;
 import com.example.myapplication.DAO.FRoomDatabase;
 import com.example.myapplication.DAO.UserDAO;
+import com.example.myapplication.Entities.Booking;
 import com.example.myapplication.Entities.User;
+import com.example.myapplication.History;
 import com.example.myapplication.LoginActivity;
 import com.example.myapplication.R;
 import com.example.myapplication.YourAccount;
 
+import java.util.List;
+
 public class ProfileFragment extends Fragment {
 
-    Button b1, btn_update, btnlog_out;
+    Button b1, btn_update, btnlog_out,btn_history;
     TextView ed1, ed2;
 
     @Override
@@ -38,6 +43,7 @@ public class ProfileFragment extends Fragment {
         ed2 = view.findViewById(R.id.edt_mail);
         btn_update = view.findViewById(R.id.btn_upd);
         btnlog_out = view.findViewById(R.id.btn_logout);
+        btn_history= view.findViewById(R.id.btn_history);
 
         // Retrieve user ID from intent
         int uid = requireActivity().getIntent().getIntExtra("uid", -1);
@@ -69,12 +75,21 @@ public class ProfileFragment extends Fragment {
 
         btn_update.setOnClickListener(v -> {
             Intent i = new Intent(getActivity(), YourAccount.class);
+            i.putExtra("uid", u.uid);
             startActivity(i);
         });
 
         btnlog_out.setOnClickListener(v -> {
             Intent i = new Intent(getActivity(), LoginActivity.class);
             startActivity(i);
+        });
+        btn_history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), History.class);
+                i.putExtra("uid", u.uid);
+                startActivity(i);
+            }
         });
     }
 

@@ -18,9 +18,13 @@ public interface    BookingDAO {
 
     @Upsert
     void insertAll(Booking... bookings);
-
+    @Upsert
+    void insert(Booking booking);
     @Delete
     void delete(Booking booking);
-
+    @Query("SELECT * FROM Booking WHERE customerId IN (:uid)")
+    List<Booking> loadAllByUid(int uid);
+    @Query("SELECT * FROM Booking WHERE roomId = :roomId")
+    List<Booking> loadAllByRid(int roomId);
 
 }

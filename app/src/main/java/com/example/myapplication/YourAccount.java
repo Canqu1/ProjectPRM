@@ -70,11 +70,19 @@ public class YourAccount extends AppCompatActivity {
         });
 
         btnCancel.setOnClickListener(new View.OnClickListener() {
+            // Initialize database
+            FRoomDatabase db = Room.databaseBuilder(getApplicationContext(),
+                            FRoomDatabase.class, "FRoomDB1")
+                    .allowMainThreadQueries()
+                    .build();
+            UserDAO userDao = db.userDao();
+            int uid = getIntent().getIntExtra("uid", -1);
+            User user = userDao.loadByIds(uid);
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(YourAccount.this, MainActivity.class);
-                i.putExtra("fragment", 4);
-                overridePendingTransition(0, 0);
+                i.putExtra("uid", user.uid);
+                i.putExtra("fragment", 5);
                 startActivity(i);
             }
         });
@@ -111,9 +119,7 @@ public class YourAccount extends AppCompatActivity {
                         Intent i = new Intent(YourAccount.this, MainActivity.class);
                         i.putExtra("uid", user.uid);
                         i.putExtra("fragment", 5);
-                        overridePendingTransition(0, 0);
                         startActivity(i);
-
                         Toast toast = Toast.makeText(getApplicationContext(), "Account update successful!", Toast.LENGTH_LONG);
                         toast.setGravity(Gravity.CENTER, 0, 0);
                         toast.show();
@@ -126,7 +132,7 @@ public class YourAccount extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(YourAccount.this, MainActivity.class);
-                i.putExtra("fragment", 4);
+                i.putExtra("fragment", 1);
                 startActivity(i);
             }
         });
@@ -151,7 +157,6 @@ public class YourAccount extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_your_account);
-
         findViewById();
         others();
         setOnClickListener();

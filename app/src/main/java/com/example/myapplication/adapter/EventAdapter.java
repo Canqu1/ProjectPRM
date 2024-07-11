@@ -14,37 +14,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myapplication.DetailActivity;
-import com.example.myapplication.Entities.Room;
-import com.example.myapplication.Entities.User;
+import com.example.myapplication.Entities.Event;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
 
-public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
-    ArrayList<Room> rooms;
-
-    public RoomAdapter(ArrayList<Room> rooms, User uid) {
-        this.rooms = rooms;
-        this.uid = uid;
+public class EventAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder>{
+    ArrayList<Event> events;
+    public EventAdapter(ArrayList<Event> events) {
+        this.events =events;
     }
-
-    private User uid;  // Add this field to store the user ID
-
-
-
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_room, parent, false);
-        return new ViewHolder(inflate);
+    public RoomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View inflate = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewholder_event, parent, false);
+        return new RoomAdapter.ViewHolder(inflate);
     }
-
     @SuppressLint("DiscouragedApi")
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.txtTitle.setText(rooms.get(position).getTitle());
+    public void onBindViewHolder(@NonNull RoomAdapter.ViewHolder holder, int position) {
+        holder.txtTitle.setText(events.get(position).getTitle());
         int drawableID = holder.itemView.getContext().getResources().getIdentifier(
-                rooms.get(position).getImg(),
+                events.get(position).getImg(),
                 "drawable",
                 holder.itemView.getContext().getPackageName()
         );
@@ -52,29 +43,17 @@ public class RoomAdapter extends RecyclerView.Adapter<RoomAdapter.ViewHolder> {
         Glide.with(holder.itemView.getContext())
                 .load(drawableID)
                 .into(holder.img);
-
-        holder.img.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(holder.itemView.getContext(), DetailActivity.class);
-                intent.putExtra("object", rooms.get(holder.getAdapterPosition()));
-                intent.putExtra("uid", uid.uid);
-                holder.itemView.getContext().startActivity(intent);
-            }
-        });
     }
 
     @Override
     public int getItemCount() {
-        return rooms.size();
+        return events.size();
     }
-
     public static class ViewHolder extends RecyclerView.ViewHolder {
         ImageView img;
         TextView txtTitle;
         TextView txtDescription;
         ConstraintLayout mainLayout;
-
         @SuppressLint("WrongViewCast")
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

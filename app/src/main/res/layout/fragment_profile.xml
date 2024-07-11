@@ -140,6 +140,20 @@
             app:layout_constraintLeft_toLeftOf="@id/layout_bot"
             app:layout_constraintRight_toRightOf="@id/layout_bot"
             app:layout_constraintTop_toBottomOf="@id/edt_name" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_history"
+            android:layout_width="387dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/drawable_shape_1"
+            android:scaleType="centerInside"
+            android:text="History"
+            android:textColor="#000000"
+
+            app:layout_constraintLeft_toLeftOf="@id/layout_bot"
+            app:layout_constraintRight_toRightOf="@id/layout_bot"
+            app:layout_constraintTop_toBottomOf="@id/edt_mail"
+            app:strokeColor="#000000" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_upd"
@@ -153,7 +167,7 @@
 
             app:layout_constraintLeft_toLeftOf="@id/layout_bot"
             app:layout_constraintRight_toRightOf="@id/layout_bot"
-            app:layout_constraintTop_toBottomOf="@id/edt_mail"
+            app:layout_constraintTop_toBottomOf="@id/btn_history"
             app:strokeColor="#000000" />
 
         <androidx.appcompat.widget.AppCompatButton

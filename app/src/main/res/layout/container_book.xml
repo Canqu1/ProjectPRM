@@ -11,7 +11,7 @@
   <ImageView
       android:id="@+id/img_detail"
       android:layout_width="match_parent"
-      android:layout_height="250dp"
+      android:layout_height="200dp"
       app:layout_constraintBottom_toTopOf="@+id/detail_layout"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
@@ -61,32 +61,14 @@
           android:textSize="26dp" />
 
 
-      <LinearLayout
-          android:id="@+id/location"
-          android:layout_width="47dp"
-          android:layout_height="47dp"
-          android:background="@drawable/drawable_shape_1"
-          android:gravity="center"
-          android:orientation="horizontal"
-          android:paddingLeft="10dp"
-          android:paddingTop="10dp"
-          android:paddingRight="10dp"
-          android:paddingBottom="10dp">
 
-        <ImageView
-            android:id="@+id/image7"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/location" />
-      </LinearLayout>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="270dp"
-        android:layout_height="wrap_content"
+        android:layout_width="382dp"
+        android:layout_height="334dp"
         android:layout_gravity="center"
         android:gravity="center"
         android:text="Fusion Original Saigon Centre has a restaurant, outdoor swimming pool, a fitness center and bar in Ho Chi Minh City. Among the facilities at this property are a 24-hour front desk and room service, along with free WiFi throughout the property."
